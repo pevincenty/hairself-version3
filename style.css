@@ -122,6 +122,9 @@ header {
     padding-left: 20px;
 }
 
+.logo a{
+    transition: 0.4s;
+}
 
 
 header nav {
@@ -541,11 +544,11 @@ footer p {
         width: 50%;
         border-radius: 20px;
         box-shadow: 0 0 15px indigo;
+        transition: 0.4s;
     }
 
     #porque-elegirnos .img-container:hover {
         transform: scale(1.1);
-        transition: 0.4s;
     }
 
     #contact h2 {
