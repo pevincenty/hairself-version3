@@ -10,20 +10,25 @@
     <link rel="stylesheet" href="responsividade.css">
     <!--Iconos-->
     <script src="https://kit.fontawesome.com/6888cbc148.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="#">
-                <img src="images/langlogo.jpeg" alt="Logo de Hair Self">
-            </a>
-        </div>
-        <nav>
-            <a href="#porque-elegirnos" class="nav-link">Nosotros</a>
-            <a href="#injerto-capilar" class="nav-link">Tratamientos</a>
-            <a href="#freq-question" class="nav-link">Preguntas Frecuentes</a>
-            <a href="#contact" class="nav-link">Contacto</a>
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="images/langlogo.jpeg" alt="Logo de Hair Self">
+        </a>
+        <input type="checkbox" id="check">
+        <label for="check" class="iconos">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <a href="#porque-elegirnos" style="--i:0" class="nav-link">Nosotros</a>
+            <a href="#injerto-capilar" style="--i:1" class="nav-link">Tratamientos</a>
+            <a href="#freq-question" style="--i:2" class="nav-link">Preguntas Frecuentes</a>
+            <a href="#contact" style="--i:3" class="nav-link">Contacto</a>
         </nav>
     </header>
 
@@ -36,23 +41,27 @@
     <section class="modal">
         <div class="modal_container">
             <img src="images/WhatsApp Image 2024-07-16 at 01.41.52.jpeg" alt="" class="modal_img">
-            <form action="">
+
+            <form action="https://formsubmit.co/emavincenty1990@gmail.com" method="POST">
                 <div class="form">
                     <div class="grupo">
-                        <input type="text" name="" id=""><span class="barra"></span>
+                        <input type="text" name="name" id=""><span class="barra"></span>
                         <label class="modal_label">Nombre</label>
                     </div>
                     <div class="grupo">
-                        <input type="email" name="" id=""><span class="barra"></span>
+                        <input type="email" name="email" id=""><span class="barra"></span>
                         <label class="modal_label">Email</label>
                     </div>
                     <div class="grupo">
-                        <textarea name="" id="" rows="3"></textarea><span class="barra"></span>
+                        <textarea name="message" id="" rows="3"></textarea><span class="barra"></span>
                         <label class="modal_label">Mensaje</label>
                     </div>
                     <button class="modal_close" role="button"><span class="text">Enviar</span></button>
                 </div>
             </form>
+            <div>
+                <span class="close">Cerrar</span>
+            </div>
         </div>
     </section>
 
@@ -65,7 +74,7 @@
                     <p>El microtransplante capilar pelo por pelo es una técnica científicamente comprobada y
                         la más utilizada nivel mundial. <br>Es una cirugía ambulatoria, se utiliza anestesia local y no
                         deja cicatrices. </p>
-                    <button class="" role="button"><span class="text">+ Info</span></button></button>
+                    <button class="" role="button" id="myBtn1"><span class="text">+ Info</span></button>
                 </div>
                 <div class="carta">
                     <h3>Nuestra <br> Misión
@@ -73,14 +82,41 @@
                     <p>Ayudar a las personas a recuperar su confianza y autoestima a través de soluciones de implante
                         capilar de alta calidad y personalizadas. Nos comprometemos a brindar un servicio que marca la
                         diferencia.</p>
-                    <button class="" role="button"><span class="text">+ Info</span></button></button>
+                    <button class="" role="button" id="myBtn2"><span class="text">+ Info</span></button>
                 </div>
                 <div class="carta">
                     <h3>Nuestra <br>Visión</h3>
-                    <p> Ser reconocidos por una marcada vocación de servicio, la innovación en tratamientos y
-                        satisfacción de nuestros pacientes.
-                        Ofrecer una experiencia positiva en cada visita a nuestro centro, para todos aquellos que buscan soluciones efectivas y seguras.</p>
-                    <button class="" role="button"><span class="text">+ Info</span></button></button>
+                    <p>Ser reconocidos por una marcada vocación de servicio, la innovación en tratamientos y
+                        satisfacción de nuestros pacientes. Ofrecer una experiencia positiva en cada visita a nuestro
+                        centro, para todos aquellos que buscan soluciones efectivas y seguras.</p>
+                    <button class="" role="button" id="myBtn3"><span class="text">+ Info</span></button>
+                </div>
+            </div>
+
+            <div id="myModal1" class="modalCarta">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente explicabo evbr <br> eniet
+                        ullam
+                        mollitia eius. Non quia, <br> aspernatur nobis <br> eaque sunt odit de <br> lectus? Veritatis
+                        fugit sit soluta
+                        est sapiente illo ut!</p>
+
+                    <img src="images/hair-loss-before-and-after.jpg" alt="200px">
+                </div>
+            </div>
+
+            <div id="myModal2" class="modalCarta">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Contenido de la Modal 2</p>
+                </div>
+            </div>
+
+            <div id="myModal3" class="modalCarta">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Contenido de la Modal 3</p>
                 </div>
             </div>
         </div>
@@ -165,7 +201,7 @@
     </section>
 
     <section id="contact">
-        <h2>Recupera tu confianza hoy</h2>
+        <h2>Recuperá tu confianza hoy</h2>
         <button class="btn_mdl" role="button"><span class="text">Envianos tu consulta</span></button>
     </section>
 
