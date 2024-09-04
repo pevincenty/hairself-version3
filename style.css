@@ -196,13 +196,12 @@ button:hover span {
         width: 100%;
         height: 0;
         background: #111111bd;
-        box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
         overflow: hidden;
         transition: 0.3s ease;
     }
 
     #check:checked~.navbar {
-        height: 17.7rem;
+        height: 13.7rem;
     }
 
     .navbar a {
@@ -255,31 +254,35 @@ button:hover span {
 
 /*Ventana Modal*/
 
-.modal {
+.modal, .contact-modal {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: #111111bd;
-    display: flex;
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: center !important;    
     opacity: 0;
     pointer-events: none;
-    transition: opacity .6s .9s;
-    --transform: translateY(-100vh);
-    --transition: transform .8s;
+    transition: opacity 0.6s ease;
 }
 
-.modal--show {
+.modal.show, .contact-modal.show {
     opacity: 1;
     pointer-events: unset;
-    transition: opacity .6s;
-    --transform: translateY(0vh);
-    --transition: transform .8s .8s;
 }
 
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; 
+}
 
-.modal_container {
+.contact-modal .modal_container {
     margin: auto;
     width: 80%;
     max-width: 600px;
@@ -291,15 +294,17 @@ button:hover span {
     gap: 1em;
     place-items: center;
     grid-auto-columns: 100%;
-    transform: var(--transform);
-    transition: var(--transition);
+    transform: translateY(-100vh);
+    transition: transform 0.8s ease 0.8s;
 }
 
-.modal_title {
-    font-size: 2rem;
+.contact-modal.show .modal_container {
+    transform: translateY(0); /* Transformación al mostrar el modal */
+    transition: transform 0.8s ease; /* Transición suave sin retraso */
 }
 
-.modal_img {
+
+.contact-modal_img {
     width: 60%;
     max-width: 190px;
     border-radius: 50%;
@@ -360,18 +365,14 @@ textarea:focus~.barra::before {
     left: 0%;
 }
 
-
-
-.modal_close {
-    font-size: 16px;
-    margin: 10px auto;
+.modal_container button{
+    margin-left: 78px;
 }
-
 
 .close {
     color: #2196F3;
     float: right;
-    font-size: 17px;
+    font-size: 25px;
     transition: 0.4s;
 }
 
@@ -381,6 +382,7 @@ textarea:focus~.barra::before {
     text-decoration: none;
     cursor: pointer;
 }
+
 
 /*:::Fin Ventana Modal:::*/
 
@@ -416,19 +418,19 @@ textarea:focus~.barra::before {
 .carta:first-child {
     background-image: linear-gradient(0deg,
             rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url('images/hair-loss-before-and-after.jpg');
+            rgba(0, 0, 0, 0.5)), url('images/tecnicatfue.jpg');
 }
 
 .carta:nth-child(2) {
     background-image: linear-gradient(0deg,
             rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url('images/man-concerned-by-hair-loss.jpg');
+            rgba(0, 0, 0, 0.5)), url('images/eyeform.jpg');
 }
 
 .carta:nth-child(3) {
     background-image: linear-gradient(0deg,
             rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url('images/doctor-writing-hair-loss.jpg');
+            rgba(0, 0, 0, 0.5)), url('images/vission.jpg');
 
 }
 
@@ -437,36 +439,6 @@ textarea:focus~.barra::before {
     margin: 10px auto;
 }
 
-.modalCarta{
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.4); 
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
-.modalCarta.show{
-    opacity: 1;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-
-}
-
-.modalCarta span {
-    height: 30px;
-}
 
 #freq-question {
     background-color: rgb(255, 255, 255);
@@ -579,7 +551,7 @@ footer {
 footer .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:center;
 }
 
 footer img {
@@ -611,7 +583,11 @@ iframe {
 
 }
 
-
+.links a{
+    margin-left: 80px;
+    color: aliceblue;
+    font-weight: bold;
+}
 
 footer p {
     font-weight: bold;
@@ -649,19 +625,16 @@ footer p {
 
 
     #porque-elegirnos .img-container {
-        background-image: url("images/hombre-recibiendo-tratamiento-caida-cabello.jpg");
+        background-image: url("images/perdidacabello.jpg");
         background-size: cover;
         background-position: center center;
         height: 500px;
-        width: 50%;
+        width: 53%;
         border-radius: 20px;
         box-shadow: 0 0 15px indigo;
         transition: 0.4s;
     }
 
-    #porque-elegirnos .img-container:hover {
-        transform: scale(1.1);
-    }
 
     #contact h2 {
         font-size: 4em;
@@ -669,10 +642,6 @@ footer p {
 
     #contact button {
         font-size: 2em;
-    }
-
-    footer .container {
-        justify-content: center;
     }
 
     footer img:hover {
